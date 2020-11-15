@@ -3,4 +3,5 @@ def call(Map config = ["name":"No Name Pipeline"], Closure body = {}) {
     if ( body != null) {
         body()
     }
+    sh "hostname"
 }
