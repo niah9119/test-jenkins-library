@@ -2,7 +2,7 @@ package se.niah.library
 
 import hudson.model.Node
 
-class JeninsApi implements Serializable {
+class JenkinsApi implements Serializable {
     public static List<Node> getNodes() {
         return Jenkins.instance.getNodes()
     }
