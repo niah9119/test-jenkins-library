@@ -9,7 +9,6 @@ def call(Map config = ["name":"No Name Pipeline"]) {
                 steps {
                     sh '/home/jenkins/pipeline_scripts/hello.groovy'
                     api
-                    echo "Nodes: " + nodeList
                 }
             }
         }
