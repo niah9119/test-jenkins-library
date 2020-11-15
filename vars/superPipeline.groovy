@@ -8,7 +8,8 @@ def call(Map config = ["name":"No Name Pipeline"]) {
             stage('Stage 1') {
                 steps {
                     sh '/home/jenkins/pipeline_scripts/hello.groovy'
-                    echo "Nodes: " + JenkinsApi.getNodes()
+                    def jobs = JenkinsApi.getNodes()
+                    echo "Jobs: " + jobs.toString()
                 }
             }
         }
