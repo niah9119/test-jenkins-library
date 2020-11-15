@@ -2,5 +2,7 @@ hudson.model.Node
 hudson.model.Jenkins
 
 def call() {
-    return Jenkins.instance.getNodes()
+    def nodes = Jenkins.instance.getNodes()
+    echo "Nodes: " + nodes
+    return nodes
 }
