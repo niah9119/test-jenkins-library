@@ -1,12 +1,15 @@
 def call(Map config = ["name":"No Name Pipeline"], Closure body = {}) {
     echo "Hello from superPipeline: ${config.name}"
-    if ( body != null) {
+    if (body != null) {
         body()
     }
     pipeline {
-        stage("First") {
-            steps {
-                sh "hostname"
+        agent { docker 'maven:3-alpine' }
+        stages {
+            stage('Stage 1') {
+                steps {
+                    sh 'hostname'
+                }
             }
         }
     }
