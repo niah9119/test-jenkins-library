@@ -1,12 +1,10 @@
 def call(Map config = ["name":"No Name Pipeline"], Closure body = {}) {
     pipeline {
-        agent { docker 'maven:3-alpine' }
+        agent { docker 'groovy' }
         stages {
             stage('Stage 1') {
                 steps {
-                    sh 'hostname'
-                    sh 'mvn -version'
-                    body()
+                    sh '/home/jenkins/pipeline_scripts/hello.groovy'
                 }
             }
         }
