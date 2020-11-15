@@ -4,11 +4,12 @@ def call(Map config = ["name":"No Name Pipeline"], Closure body = {}) {
         body()
     }
     pipeline {
-        agent any
+        agent { docker 'maven:3-alpine' }
         stages {
             stage('Stage 1') {
                 steps {
                     sh 'hostname'
+                    sh 'mvn -version'
                 }
             }
         }
