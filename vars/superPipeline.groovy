@@ -4,7 +4,7 @@ def call(Map config = ["name":"No Name Pipeline"], Closure body = {}) {
         body()
     }
     pipeline {
-        agent { docker 'maven:3-alpine' }
+        agent any
         stages {
             stage('Stage 1') {
                 steps {
